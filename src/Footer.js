@@ -4,7 +4,7 @@ import logo from './icons_assets/Logo.svg'
 
 export default function Footer() {
     return (
-    <footer style={{backgroundColor: 'lightyellow'}} id='footer'>
+    <footer id='footer'>
         <img  src={logo} width='200px' alt='Little Lemon logo' />
 
         <nav>
@@ -30,14 +30,14 @@ export default function Footer() {
         </ul>
     </nav>
 
-    <div>
-        <h3>Contact</h3>
-        <h6>Adress</h6>
-        <h6>Phone number</h6>
-        <h6>Email</h6>
+    <div className='contact'>
+        <h3>Contact Us</h3>
+        <h6>Adress: Chicago, 1st street, 16</h6>
+        <h6>Phone number: 773-697-4961 </h6>
+        <h6>Email: llrestaurant@gmail.com</h6>
     </div>
 
-    <div>
+    <div className='socialMedia'>
         <h3>Social Media Links</h3>
         <ul>
             <li>

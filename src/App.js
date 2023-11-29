@@ -13,12 +13,10 @@ import Footer from './Footer.js'
 function App() {
   return (
     <>
-
     <Header></Header>
     <Nav></Nav>
     <Main></Main>
     <Footer></Footer>
-
     </>
   );
 }

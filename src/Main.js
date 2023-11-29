@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Main() {
     return (
-    <main style={{backgroundColor: 'lightgrey', height: '50vh'}}>
+    <main style={{backgroundColor: 'lightgrey', height: '100vh'}} id='main'>
 
     </main>
     )

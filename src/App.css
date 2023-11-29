@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+/* LAYOUT */
+
+#nav {
+  grid-column: col-start 5 / -1;
+  grid-row: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#header {
+  grid-column: col-start / span 6;
+  grid-row: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content:space-around;
 }
 
-.App-link {
-  color: #61dafb;
+#main {
+  grid-column: col-start / -1;
+  grid-row: 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#footer {
+  grid-column: col-start/ -1;
+  grid-row: 3;
+
+  display: grid;
+  grid-template-columns: repeat(4, [col-start] 1fr);
+  gap: 20px;
 }
+#footer img {
+  grid-column: col-start / span 1 ;
+}
+
+#footer nav {
+    grid-column: col-start 2 / span 1;
+}
+
+#footer .contact {
+  grid-column: col-start 3/ span 1;
+}
+
+#footer .socialMedia {
+  grid-column: col-start 4/ -1;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  gap: 10px;
+}
+
+/* HEADER */
+
+#header img {
+  align-self: center;
+}
+
+/* NAVBAR */
+
+#navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#navbar li {
+  float: left;
+}
+
+#navbar li a {
+  display: block;
+  color: #333333;
+  text-align: center;
+  padding: 18px 16px;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+#navbar li a:hover {
+  color: #f4ce14;
+}
+
+/* FOOTER */
+
+#footer img, #footer nav, #footer .contact, #footer .socialMedia {
+  justify-self: center;
+}
+
+#footer li {
+  list-style-type: none;
+  margin: 3px;
+  padding: 3px;
+  overflow: hidden;
+}
+
+#footer li a {
+  text-decoration: none;
+  color: #333333;
+
+}
+
+#footer li a:hover {
+  color:#f4ce14;
+}
+

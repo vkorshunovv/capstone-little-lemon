@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Nav() {
     return (
-    <nav style={{backgroundColor: 'lightblue' }}>
-        <ul>
+    <nav id='nav'>
+        <ul id='navbar'>
             <li>
                 <a href="#header">HOME</a>
             </li>
