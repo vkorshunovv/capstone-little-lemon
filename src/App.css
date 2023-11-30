@@ -44,10 +44,16 @@
 #root {
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
-  gap: 10px;
+  column-gap: 10px;
 }
 
 /* HEADER */
+
+#header {
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.573);
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
 
 #header img {
   align-self: center;
@@ -60,6 +66,9 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 #navbar li {
@@ -73,13 +82,112 @@
   padding: 18px 16px;
   margin-left: 10px;
   text-decoration: none;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 
 #navbar li a:hover {
   color: #f4ce14;
 }
 
+/* MAIN */
+
+#main {
+  height: 150vh;
+
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-template-rows: repeat(4, [row-start] 1fr);
+  column-gap: 10px;
+}
+
+#hero {
+
+  grid-column: col-start/ -1;
+  grid-row: row-start/ span 2;
+  background: linear-gradient(to bottom, #495e57 50%, #ffffff 0%);
+  display:flex;
+}
+
+#hero article {
+ padding-left: 20%;
+ width: 30%;
+ margin-top: 2%;
+}
+
+#hero img {
+  width: 350px;
+  height: fit-content;
+  border-radius: 16px;
+  margin-top: 3rem;
+  margin-left: 6rem;
+  transition: 2s;
+}
+
+#hero img:hover {
+  transform: rotate(5deg) scale(1.2);
+  box-shadow: 60px -16px #000000;
+}
+
+#hero article div:first-of-type {
+  font-family: 'Markazi Text', serif;
+  color: #f4ce14;
+  font-size: 45pt;
+  font-weight: 500;
+  margin-bottom: -17px;
+}
+
+#hero article div:nth-child(2) {
+  font-family: 'Markazi Text', serif;
+  color: #edefee;
+  font-size: 25pt;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#hero article div:nth-child(3) {
+  font-family: 'Karla', sans-serif;
+  color: #edefee;
+  font-size: 16pt;
+  font-weight: 500;
+  word-wrap: break-word;
+  padding-right: 35%;
+}
+
+#hero button {
+  margin-top: 7%;
+  border-radius: 16px;
+  background-color: #f4ce14;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  border: none;
+  padding: 10px 20px;
+  transition: .6s;
+}
+
+#hero button:hover {
+  background-color: #f4ce14;
+  transform: scale(1.1);
+  box-shadow:10px 10px #333333;
+}
+
+#hero button:active {
+  background-color: #deb902;
+  transition: none;
+}
+
 /* FOOTER */
+
+#footer {
+  box-shadow: 1px 1px 3px #333333;
+  background-color: #edefee;
+}
+
+#footer img {
+  padding-top: 3%;
+}
 
 #footer img, #footer nav, #footer .contact, #footer .socialMedia {
   justify-self: center;
