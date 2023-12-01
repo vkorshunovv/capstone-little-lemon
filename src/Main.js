@@ -15,6 +15,17 @@ export default function Main() {
             </article>
             <img src={heroPic} alt='Restaurant chef' />
         </section>
+        <section id='onlineMenuButton'>
+            <div>
+                <p>This weeks specials!</p>
+            </div>
+            <button type='button'>Online Menu</button>
+        </section>
+        <section id='specialCards'>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
     </main>
     )
 }
