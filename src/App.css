@@ -94,14 +94,24 @@
   color: #f4ce14;
 }
 
+#navbar li:first-child {
+  border-radius: 16px;
+  background-color: #495e57;
+}
+
+#navbar li:first-child a {
+  color: #edefee;
+  display: table-cell;
+}
+
 /* MAIN */
 
 #main {
-  height: 150vh;
+  min-height: 100vh;
 
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
-  grid-template-rows: repeat(4, [row-start] 1fr);
+  grid-template-rows: repeat(5, [row-start] 1fr);
   column-gap: 10px;
 }
 
@@ -115,6 +125,7 @@
   grid-template-columns: repeat(12, [col-start] 1fr);
   grid-template-rows: repeat(2, [row-start] 1fr);
   column-gap: 10px;
+  height: 40rem;
 }
 
 
@@ -126,11 +137,10 @@
 
 #hero img {
   width: 380px;
-  /* height: fit-content; */
   border-radius: 16px;
   margin-top: 3rem;
   margin-right: -1rem;
-  transition: 2s;
+  transition: 1s;
 
   grid-column: col-start 8/ span 3;
   grid-row: row-start 1/ span 2;
@@ -167,7 +177,7 @@
 }
 
 #hero button {
-  margin-top: 9%;
+  margin: 1rem 0 3rem 0;
   border-radius: 16px;
   background-color: #f4ce14;
   font-family: 'Karla', sans-serif;
@@ -175,7 +185,7 @@
   font-size: 1.3rem;
   border: none;
   padding: 10px 20px;
-  transition: .6s;
+  transition: .3s;
 }
 
 #hero button:hover {
@@ -195,6 +205,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  height: 15rem;
 }
 
 
@@ -204,6 +215,8 @@
   font-weight: 500;
   margin-bottom: 0;
   color: #333333;
+  text-shadow: 100px 50px #495e5715;
+
 }
 
 #onlineMenuButton button {
@@ -231,34 +244,103 @@
 
 #specialCards {
   grid-column: col-start/ -1;
-  grid-row: row-start 3/ -1;
+  grid-row: row-start 3/ span 2;
 
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
   column-gap: 10px;
 }
 
-#main #specialCards div:first-of-type {
-  grid-column: col-start 3/ span 2;
-  background-color: #495e57;
+#main #specialCards .firstCardContainer {
+  grid-column: col-start 3/ span 3;
+  display: flex;
+  height: fit-content;
 }
 
-
-#main #specialCards div:nth-child(2) {
+#main #specialCards .secondCardContainer  {
   grid-column: col-start 6/ span 2;
-  background-color: #495e57;
+  margin: 0 -4rem;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
 }
 
-#main #specialCards div:nth-child(3) {
-  grid-column: col-start 9/ span 2;
-  background-color: #495e57;
+#main #specialCards .thirdCardContainer  {
+  grid-column: col-start 8/ span 3;
+  display: flex;
+  justify-content: flex-end;
+  height: fit-content;
 }
+
+#specialCards .card {
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 16px 16px 0 0;
+  width: 80%;
+  background-color: #edefee;
+  font-family: 'Karla', sans-serif;
+}
+
+#specialCards .card:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+}
+
+#specialCards .card img {
+  width: 100% ;
+  height: fit-content;
+  border-radius: 16px 16px 0 0;
+  height: 32%;
+}
+
+.cardContainer {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#specialCards .card h4  {
+  font-size: 18pt;
+  font-weight: 900;
+  color: #333333;
+  display: flex;
+  justify-content: space-between;
+}
+
+#specialCards .card h4 span {
+  color: #ee9972;
+}
+
+#specialCards .card p {
+  color: #495e57;
+  font-size: 16pt;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#specialCards .card a {
+  text-decoration: none;
+  color: #333333;
+  font-size: 14pt;
+  font-weight: bold;
+
+}
+
+
+.customersGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  grid-column: col-start 3/ span 8;
+  grid-row: row-start 5/ span 1;
+}
+
 
 /* FOOTER */
 
 #footer {
   box-shadow: 1px 1px 3px #333333;
-  background-color: #edefee;
+  background-color: #333333;
 }
 
 #footer img {
@@ -267,6 +349,7 @@
 
 #footer img, #footer nav, #footer .contact, #footer .socialMedia {
   justify-self: center;
+  font-family: 'Karla', sans-serif;
 }
 
 #footer li {
@@ -278,7 +361,10 @@
 
 #footer li a {
   text-decoration: none;
-  color: #333333;
+  color: #edefee;
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
 
 }
 
@@ -286,3 +372,28 @@
   color:#f4ce14;
 }
 
+#footer .contact {
+display: flex;
+flex-direction: column;
+}
+
+#footer .contact h6 {
+  font-size: 10pt;
+  margin: 9px 0;
+  color: #edefee;
+}
+
+#footer .contact h6 i {
+  font-weight: 500;
+}
+
+#footer .socialMedia a {
+  font-family: 'Markazi Text', sans-serif ;
+  font-weight: 400;
+  font-size: 16pt;
+  color: #edefee;
+}
+
+#footer .contact h3, #footer .socialMedia h3 {
+  color: #edefee;
+}

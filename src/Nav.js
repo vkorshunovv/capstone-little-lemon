@@ -5,13 +5,13 @@ export default function Nav() {
     <nav id='nav'>
         <ul id='navbar'>
             <li>
-                <a href="#header">Home</a>
+                <a href="">Home</a>
             </li>
             <li>
                 <a href="">About</a>
             </li>
             <li>
-                <a href="#footer">Menu</a>
+                <a href="">Menu</a>
             </li>
             <li>
                 <a href="">Reservations</a>
