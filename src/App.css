@@ -111,7 +111,7 @@
   border-radius: 16px;
   margin-top: 3rem;
   margin-right: -1rem;
-  transition: 1s;
+  transition: .4s;
 
   grid-column: col-start 8/ span 3;
   grid-row: row-start 1/ span 2;
@@ -119,7 +119,7 @@
 
 
 #hero img:hover {
-  transform: rotate(5deg) scale(1.2);
+  transform: rotate(4deg) scale(1.2);
   box-shadow: 60px -16px #000000;
 }
 
@@ -156,7 +156,7 @@
   font-size: 1.3rem;
   border: none;
   padding: 1rem;
-  transition: .3s;
+  transition: .2s;
 }
 
 #hero button:hover {
@@ -198,7 +198,7 @@
   font-size: 1.5rem;
   border: none;
   padding: 17px 27px;
-  transition: .6s;
+  transition: .2s;
   margin-bottom: 1%;
 }
 
@@ -539,6 +539,19 @@ flex-direction: column;
   font-size: 16pt;
 }
 
+#copyright a {
+  color: #edefee;
+  font-family: 'Markazi Text', sans-serif ;
+  font-weight: 400;
+  font-size: 16pt;
+  text-decoration-thickness: 1px;
+  text-underline-position: under;
+}
+
+#copyright a:hover {
+  color: #ee9972;
+}
+
 /* BOOKING PAGE */
 
 #booking {
@@ -546,3 +559,100 @@ flex-direction: column;
   min-height: 100vh;
   grid-column: col-start/-1;
 }
+
+#booking section {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#booking form {
+  display: grid;
+  gap: 20px;
+}
+
+#booking label {
+  font-family: 'Karla', serif;
+  font-size: 14pt;
+  color: #edefee;
+  font-style: italic;
+}
+
+#booking input  {
+  border-radius: 8px;
+  border: none;
+  padding: 1rem;
+  font-size: 12pt;
+  width:25rem;
+  display: inline-block;
+}
+
+#booking select {
+  border-radius: 6px;
+  border: none;
+  padding: 1rem;
+  font-size: 12pt;
+  display: inline-block;
+}
+
+#booking #button {
+  margin-top: 2rem;
+  border-radius: 16px;
+  background-color: #f4ce14;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.5rem;
+  border: none;
+  padding: 17px 27px;
+  transition: .3s;
+  width: 27rem;
+  box-shadow: 1px 3px 5px #00000022;
+}
+
+
+#booking #button:active:enabled {
+  transform: scale(0.9);
+  box-shadow: none;
+}
+
+header {
+  display: flex;
+}
+
+.homeIcon {
+margin: 1rem;
+position: fixed;
+transition: .3s;
+}
+
+
+.homeIcon:active {
+  transform: scale(0.98);
+}
+
+.homeIcon img {
+  width: 10%;
+}
+
+header .heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.heading p:first-of-type {
+  font-family: 'Markazi Text', serif;
+  color: #f4ce14;
+  font-size: 55pt;
+  font-weight: 500;
+  margin-bottom: -70px;
+}
+
+.heading p:nth-child(2) {
+  font-family: 'Markazi Text', serif;
+  color: #edefee;
+  font-size: 35pt;
+  font-weight: 300;
+}
+

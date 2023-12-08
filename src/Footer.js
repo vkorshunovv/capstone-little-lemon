@@ -1,11 +1,12 @@
 import React from 'react'
 import invertedLogo from './icons_assets/icon-inverted.png'
+import logoSquare from './icons_assets/logoSquare.png'
 
 
 export default function Footer() {
     return (
     <footer id='footer'>
-        <img  src={invertedLogo} width='200px' alt='Little Lemon logo' />
+        <img  src={logoSquare} width='200px' alt='Little Lemon logo' />
 
         <nav>
         <ul>
@@ -52,7 +53,7 @@ export default function Footer() {
         </ul>
     </div>
     <div id="copyright">
-        <p>&copy; Copyright 2023. Viktor Korshunov.</p>
+        <p> &copy; Copyright 2023. <a href='https://github.com/vkorshunovv/capstone-little-lemon' target='_blank'>Viktor Korshunov.</a> Don't claim as your own.</p>
     </div>
     </footer>
     )

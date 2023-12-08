@@ -6,6 +6,7 @@ import Chicago from './Chicago'
 
 
 export default function Main() {
+
     return (
 
     <main id='main'>
