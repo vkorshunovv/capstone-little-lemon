@@ -2,18 +2,25 @@ import { useState } from "react";
 import homeLogo from './icons_assets/home-5-512.png'
 
 
-export default function BookingForm({availableTimes, handleDateChange, updateTimes}) {
 
-    const initialTimes = [
-        'Select',
-        '17.00',
-        '18.00',
-        '19.00',
-        '20.00',
-        '21.00',
-        '22.00',
-    ]
-    const timeSelections = initialTimes.map((time, index) => {
+export default function BookingForm({availableTimes, handleDateChange}) {
+
+
+    const [date, setDate] = useState('');
+    const [guests, setGuests] = useState('');
+    const [occasion, setOccasion] = useState('');
+    const [time, setTime] = useState('Select')
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setOccasion('');
+        setGuests('');
+        setTime('Select')
+        setDate('');
+        console.log("Form submitted :", { time, date, guests, occasion });
+ }
+
+    const timeSelections = availableTimes.map((time, index) => {
             return (
                 <option
                  value={time}
@@ -22,25 +29,13 @@ export default function BookingForm({availableTimes, handleDateChange, updateTim
                  >
                  {time}
                 </option>
-                )})
+                )});
 
-    const [date, setDate] = useState('');
-    const [guests, setGuests] = useState('');
-    const [occasion, setOccasion] = useState('');
-
-    const handleSubmit = (e) => {
-           e.preventDefault();
-           setDate('');
-           setGuests('');
-           setOccasion('');
-           console.log(availableTimes, date, guests, occasion);
-    }
-
-    function onDateChange(e) {
-        const newDate = e.target.value;
-        setDate(newDate)
-        handleDateChange(newDate);
-    }
+     const handleDateChangeUpdate = (e) => {
+     const selectedDate = e.target.value;
+     setDate(selectedDate);
+     handleDateChange(selectedDate);
+};
 
     return (
         <>
@@ -63,15 +58,15 @@ export default function BookingForm({availableTimes, handleDateChange, updateTim
         <input
             type="date"
             id="res-date"
-            onChange={onDateChange}
+            onChange={handleDateChangeUpdate}
             value={date}
         />
 
         <label htmlFor="res-time">Time</label>
         <select
             id="res-time"
-            onChange={updateTimes}
-            value={availableTimes}
+            onChange={(e) => setTime(e.target.value)}
+            value={time}
             >
                 {timeSelections}
         </select>
@@ -96,8 +91,9 @@ export default function BookingForm({availableTimes, handleDateChange, updateTim
                 <option value='' disabled >Select</option>
                 <option value='Birthday'>Birthday</option>
                 <option value='Anniversary'>Anniversary</option>
+                <option value='Engagement'>Engagement</option>
         </select>
-        <input disabled={!date || !availableTimes || !guests || !occasion} type="submit" value="Reserve a Table" id="button"/>
+        <input disabled={!date || !time || !guests || !occasion} type="submit" value="Reserve a Table" id="button"/>
      </form>
 </section>
 </>
