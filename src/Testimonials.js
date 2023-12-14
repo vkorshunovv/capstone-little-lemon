@@ -10,7 +10,7 @@ export default function CustomersSay() {
         <div id="testimonials">
             <span className='heading'>What our guests say about us.</span>
             <div className="testimonialsContainer">
-            <div class="customerCard">
+            <div className="customerCard">
             <img src={Avatar1} alt="Avatar" />
             <div className='stars'>
                 <span className="fa fa-star checked"></span>
@@ -25,7 +25,7 @@ export default function CustomersSay() {
             </div>
             </div>
 
-            <div class="customerCard">
+            <div className="customerCard">
             <img src={Avatar2} alt="Avatar" />
             <div className='stars'>
                 <span className="fa fa-star checked"></span>
@@ -55,7 +55,7 @@ export default function CustomersSay() {
             </div>
             </div>
 
-            <div class="customerCard">
+            <div className="customerCard">
             <img src={Avatar4} alt="Avatar" />
             <div className='stars'>
                 <span className="fa fa-star checked"></span>

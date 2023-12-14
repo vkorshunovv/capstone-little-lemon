@@ -1,23 +1,20 @@
-import React from 'react'
-import './App.css';
-import BookingPage from './BookingPage';
-import Homepage from './Homepage';
-import { BrowserRouter } from 'react-router-dom';
-import { Route } from 'react-router-dom'
-import { Routes } from 'react-router-dom'
-
-
-
-
-
+import React from "react";
+import "./App.css";
+import BookingPage from "./BookingPage";
+import Homepage from "./Homepage";
+import { BrowserRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import ConfirmedBooking from "./ConfirmedBooking";
 
 function App() {
   return (
     <BrowserRouter>
-    <Routes>
-    <Route exact path='/' element={<Homepage />} />
-    <Route path='/booking' element={<BookingPage />} />
-    </Routes>
+      <Routes>
+        <Route exact path="/" element={<Homepage />} />
+        <Route path="/booking" element={<BookingPage />} />
+        <Route path="/confirmation" element={<ConfirmedBooking />} />
+      </Routes>
     </BrowserRouter>
   );
 }
