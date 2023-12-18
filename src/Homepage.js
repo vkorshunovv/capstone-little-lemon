@@ -9,18 +9,11 @@ export default function Homepage() {
   return (
     <>
       <MediaQuery maxWidth={767}>
-        {/* <div className="App" id="outer-container"> */}
-          <Sidebar
-            // pageWrapId={"page-wrap"}
-            // outerContainerId={"outer-container"}
-          />
-          {/* <div id="page-wrap"> */}
-            <Header />
-            <Nav />
-            <Main />
-            <Footer />
-          {/* </div>
-        </div> */}
+        <Sidebar />
+        <Header />
+        <Nav />
+        <Main />
+        <Footer />
       </MediaQuery>
 
       <MediaQuery minWidth={768}>

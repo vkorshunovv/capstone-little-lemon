@@ -1,9 +1,131 @@
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
 
 #root {
     display: grid;
     grid-template-columns: repeat(8, [col-start] 1fr);
     column-gap: 10px;
   }
+
+  #header {
+  grid-column: col-start / span 1;
+  padding-left: 1rem;
+}
+
+#nav {
+    grid-column: col-start 2 / -1;
+}
+
+#navbar {
+    display: block;
+}
+
+#navbar li a {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+        /*MAIN*/
+
+ #main {
+        grid-template-columns: repeat(8, [col-start] 1fr);
+        column-gap: 0;
+        grid-template-rows: repeat(5,  min-content [row-start]);
+    }
+
+    #hero {
+        grid-row: row-start / span 1;
+        grid-column: col-start / -1;
+        background: #495e57;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #hero article {
+        margin: 0 0 0 1rem;
+      }
+
+    #hero img {
+        width: 300px;
+        margin: 0 1rem 0 0;
+    }
+
+    #main #onlineMenuButton {
+        grid-column: col-start / -1;
+        margin: 0 1rem 3rem 1rem;
+    }
+
+    #main #onlineMenuButton div p {
+        margin-bottom: none;
+    }
+
+    #specialCards {
+        display: flex;
+        flex-direction: row;
+        row-gap: 2rem;
+        margin: 3rem 0 3rem 0;
+        grid-row: row-start 3/ span 1;
+        grid-column: col-start / -1;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      #main #specialCards .firstCardContainer {
+          justify-content: center;
+          width: 25rem;
+      }
+
+      #main #specialCards .secondCardContainer  {
+          display: none;
+
+      }
+
+      #main #specialCards .thirdCardContainer {
+          justify-content: center;
+          width: 25rem;
+      }
+
+      #testimonials {
+        grid-row: row-start 4/ span 1;
+        grid-template-columns: repeat(8, [col-start] 1fr);
+      }
+
+      #testimonials .heading  {
+        grid-column: col-start 2/ span 6;
+        text-align: center;
+      }
+
+      #testimonials .testimonialsContainer {
+        grid-column: col-start / -1;
+        margin: 0 1rem 3rem 1rem;
+        padding: 1rem 0 0 0;
+      }
+
+      #testimonials .customerCard  {
+        justify-content: flex-start;
+        align-items: baseline;
+      }
+
+      #testimonials img {
+        width: 4rem;
+      }
+
+     #history {
+    grid-column: col-start/ -1;
+    padding: 1rem;
+    }
+
+    #history .historyDescription {
+        padding: 0;
+        justify-content: center;
+    }
+
+    #history img {
+        height: none;
+    }
+
+#footer {
+    padding: 1rem;
+}
 
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import "./Media.css";
+import "./Media1024px.css"
 import BookingPage from "./BookingPage";
 import Homepage from "./Homepage";
 import { BrowserRouter } from "react-router-dom";
