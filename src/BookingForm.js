@@ -1,5 +1,6 @@
 import { useState } from "react";
 import homeLogo from "./icons_assets/home-5-512.png";
+import ConfirmedBooking from "./ConfirmedBooking";
 
 export default function BookingForm({
   availableTimes,
@@ -59,6 +60,7 @@ export default function BookingForm({
             id="res-date"
             onChange={handleDateChangeUpdate}
             value={date}
+            required
           />
 
           <label htmlFor="res-time">Time</label>
@@ -66,6 +68,7 @@ export default function BookingForm({
             id="res-time"
             onChange={(e) => setTime(e.target.value)}
             value={time}
+            required
           >
             {timeSelections}
           </select>
@@ -79,13 +82,16 @@ export default function BookingForm({
             id="guests"
             onChange={(e) => setGuests(e.target.value)}
             value={guests}
+            required
           />
 
           <label htmlFor="occasion">Occasion</label>
           <select
             id="occasion"
+            data-testid="occasion"
             onChange={(e) => setOccasion(e.target.value)}
             value={occasion}
+            required
           >
             <option value="" disabled>
               Select
@@ -96,10 +102,12 @@ export default function BookingForm({
           </select>
 
           <input
-            disabled={!date || !time || !guests || !occasion}
+            disabled={!date || !guests || !occasion}
             type="submit"
             value="Reserve a Table"
             id="button"
+            data-testid="button"
+            aria-label="On Click"
           />
         </form>
       </section>

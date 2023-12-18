@@ -1,0 +1,9 @@
+@media only screen and (max-width: 1024px) {
+
+#root {
+    display: grid;
+    grid-template-columns: repeat(8, [col-start] 1fr);
+    column-gap: 10px;
+  }
+
+}

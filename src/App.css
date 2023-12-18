@@ -1,4 +1,7 @@
 /* LAYOUT */
+html {
+  scroll-behavior: smooth;
+}
 
 #nav {
   grid-column: col-start 5 / span 6;
@@ -560,9 +563,6 @@ flex-direction: column;
   grid-column: col-start/-1;
 }
 
-header {
-  display: flex;
-}
 
 .homeIcon {
 margin: 1rem;
@@ -578,6 +578,7 @@ transition: .3s;
 .homeIcon img {
   width: 10%;
 }
+
 
 header .heading {
   display: flex;
@@ -705,3 +706,5 @@ header .heading {
 #confirm #button:active {
   transform: scale(0.9);
 }
+
+
