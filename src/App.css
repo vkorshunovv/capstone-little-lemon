@@ -3,18 +3,33 @@ html {
   scroll-behavior: smooth;
 }
 
+#root {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-template-rows: repeat(3, [row-start] min-content);
+  column-gap: 10px;
+  position: relative;
+}
+
+#header {
+  grid-column: col-start / -1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  column-gap: 10px;
+  background: #edefee;
+  position: fixed;
+  z-index: 1000;
+}
+
+#header img {
+  grid-column: col-start 3/ span 2;
+}
+
 #nav {
   grid-column: col-start 5 / span 6;
   grid-row: 1;
 
-  display: grid;
-  justify-content: flex-end;
-}
-
-#header {
-  grid-column: col-start 3/ span 2;
-  grid-row: 1;
-  display: flex;
 }
 
 #main {
@@ -22,24 +37,27 @@ html {
   grid-row: 2;
 }
 
-
-#root {
-  display: grid;
-  grid-template-columns: repeat(12, [col-start] 1fr);
-  column-gap: 10px;
-}
-
 /* HEADER */
 
 #header {
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.573);
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+  box-shadow: 0 2px 1px -2px rgba(0, 0, 0, 0.573);
 }
 
 #header img {
   align-self: center;
   width: 200px;
+}
+
+.visible {
+  /* display: flex; */
+  top: 0;
+  transition: top 0.4s ease-out;
+}
+
+.hidden {
+  /* display: none; */
+  top: -92px;
+  transition: top 0.4s ease-out;
 }
 
 /* NAVBAR */
@@ -49,7 +67,6 @@ html {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
   padding-bottom: 1rem;
   padding-top: 1rem;
   display: flex;
@@ -87,6 +104,7 @@ html {
   grid-template-columns: repeat(12, [col-start] 1fr);
   grid-template-rows: repeat(8, [row-start] 1fr);
   column-gap: 10px;
+  margin-top: 92px;
 }
 
 #hero {
@@ -446,6 +464,7 @@ html {
 
 #footer {
   grid-column: col-start/ -1;
+  grid-row: 3;
 
   display: grid;
   grid-template-columns: repeat(4, [col-start] 1fr);
@@ -682,6 +701,18 @@ header .heading {
 
 #confirm  h2 {
   font-family: 'Karla', sans-serif;
+}
+
+#confirm p {
+  display: flex;
+  flex-direction: column;
+}
+
+#confirm span {
+    color: #495e57;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 1rem;
 }
 
 #confirm #button {

@@ -28,14 +28,15 @@ const fetchAPI = (date) => {
       if (availableTimesByDate[date]) {
         resolve(availableTimesByDate[date]);
         // console.log("Available Dates:", Object.keys(availableTimesByDate));
-        console.log("selected date array from AvailableTimesByDate", availableTimesByDate[date]);
-        console.log("Selected date in fetchAPI", [date])
-        console.log('fetchAPI is', fetchAPI())
+        console.log(
+          "selected date array from AvailableTimesByDate",
+          availableTimesByDate[date]
+        );
+        console.log("Selected date in fetchAPI", [date]);
+        console.log("fetchAPI is", fetchAPI());
       } else if (availableTimesByDate[date] == null) {
-        console.log('FetchApi return null')
-      }
-
-      else {
+        console.log("FetchApi return null");
+      } else {
         reject(new Error("No available times for the selected date."));
       }
     }, 1000);

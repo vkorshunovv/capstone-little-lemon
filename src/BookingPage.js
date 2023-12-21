@@ -9,6 +9,22 @@ export default function BookingPage() {
 
   const [submittedData, setSubmittedData] = useState(null);
 
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+
+  function initializeTimes() {
+    // fetchAPI()
+    //   .then((times) => {
+    //     const availableTimes = [...times];
+    //     dispatch({ type: "update_times", availableTimes });
+
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error fetching available times:", error);
+    //   });
+    console.log("Initial Time is");
+    return [17];
+  }
+
   const handleDateChange = (selectedDate) => {
     console.log("Initial Selected Date:", selectedDate);
     dispatch({ type: "update_times", selectedDate });
@@ -18,23 +34,35 @@ export default function BookingPage() {
   function updateTimes(state, action) {
     switch (action.type) {
       case "update_times":
-        const  selectedDate  = action.selectedDate;
-        console.log("Selected Date in updateTimes:", selectedDate); /*To start from here!*/
+        const { selectedDate } = action;
+        console.log("Selected Date in updateTimes:", action.selectedDate);
 
         fetchAPI(selectedDate)
           .then((times) => {
             const availableTimes = [...times];
-            // dispatch({ type: "update_times", availableTimes });
+
             console.log("times in fetchAPI(selectedDate)" + times);
           })
           .catch((error) => {
             console.error("Error fetching available times:", error);
           });
-        return state; /*End point*/
+        return [18]; /*End point*/
       default:
         return state;
     }
   }
+
+  // const handleDateChange = async (selectedDate) => {
+  //   console.log('selectedDate when pick a date: ', selectedDate)
+
+  //   try {
+  //     const times = await fetchAPI(selectedDate);
+  //     dispatch({ type: 'update_times_success', availableTimes });
+  //   } catch(error){
+  //     console.error('Error fetching available times:', error);
+  //     dispatch({ type: 'update_times_failure' });
+  //   }
+  // };
 
   const submitForm = async (formData) => {
     try {
@@ -47,20 +75,6 @@ export default function BookingPage() {
       console.error("Error submitting form:", error);
     }
   };
-
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
-
-  function initializeTimes() {
-    fetchAPI()
-      .then((times) => {
-        const availableTimes = [...times];
-        dispatch({ type: "update_times", availableTimes });
-      })
-      .catch((error) => {
-        console.error("Error fetching available times:", error);
-      });
-    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-  }
 
   return (
     <>

@@ -1,0 +1,64 @@
+@media only screen and (min-width: 1080px) and (max-width: 1365px) {
+
+    #header {
+        grid-column: col-start / span -1;
+    }
+
+    #header img {
+        grid-column: col-start 2 / span 1;
+    }
+
+        #nav {
+            grid-column: col-start 3 / span 9;
+        }
+
+        #hero article {
+            grid-column: col-start 2/ span 5;
+        }
+
+        #hero img {
+            grid-column: col-start 8/ span 4;
+        }
+
+        #main #onlineMenuButton {
+            grid-column: col-start 2/ span 10;
+        }
+
+        #specialCards {
+            grid-column: col-start 2/ span 10;
+        }
+
+        #specialCards .card {
+            width: 19rem;
+        }
+
+
+        #main #specialCards .firstCardContainer {
+            grid-column: col-start 1/ span 4;
+        }
+
+        #main #specialCards .secondCardContainer {
+            grid-column: col-start 5/ span 4;
+        }
+
+        #main #specialCards .thirdCardContainer {
+            grid-column: col-start 9/ -1;
+        }
+
+        #specialCards .card img {
+            height: none;
+        }
+
+        .cardContainer  {
+            margin: 0.7rem;
+        }
+
+        #testimonials .testimonialsContainer {
+            grid-column: col-start 2/span 10;
+        }
+
+        #history {
+            grid-column: col-start 2/ span 10;
+        }
+
+}

@@ -11,8 +11,12 @@
   padding-left: 1rem;
 }
 
+#header img {
+    grid-column: col-start 2/ span 2;
+}
+
 #nav {
-    grid-column: col-start 2 / -1;
+    grid-column: col-start 5 / -1;
 }
 
 #navbar {
@@ -23,6 +27,12 @@
     margin: 0;
     font-size: 1.2rem;
 }
+
+.hidden {
+    /* display: none; */
+    top: -149px;
+    transition: top 0.4s ease-out;
+  }
 
         /*MAIN*/
 

@@ -15,19 +15,19 @@
     }
 
     #header {
-        grid-column: col-start;
+        grid-column: col-start/ -1;
         display: flex;
         align-items: flex-start;
-        width: 4rem;
-        padding-left: 2.5rem;
+        padding-left: 2rem;
+        width: 100vw;
+        height: 11vh;
       }
-    .mobileNav {
-        width: 70vw;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        position: relative;
-    }
+
+    .hidden {
+        /* display: none; */
+        top: -110px;
+        transition: top 0.4s ease-out;
+      }
 
     #sidebar {
         background-color:#333333;

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import homeLogo from "./icons_assets/home-5-512.png";
-import ConfirmedBooking from "./ConfirmedBooking";
 
 export default function BookingForm({
   availableTimes,
