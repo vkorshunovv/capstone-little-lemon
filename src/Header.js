@@ -26,11 +26,11 @@ export default function Header() {
     <header id="header" className={cls}>
       <img src={logo} width="150em" alt="Little Lemon logo" />
       <MediaQuery maxWidth={767}>
-      <Sidebar />
+        <Sidebar />
       </MediaQuery>
 
       <MediaQuery minWidth={768}>
-      <Nav />
+        <Nav />
       </MediaQuery>
     </header>
   );

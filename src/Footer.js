@@ -1,5 +1,4 @@
 import React from "react";
-
 import logoSquare from "./icons_assets/logoSquare.png";
 
 export default function Footer() {

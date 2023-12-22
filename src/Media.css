@@ -6,7 +6,6 @@
         column-gap: 10px;
       }
 
-
         /*HEADER*/
 
     #nav {
@@ -24,7 +23,6 @@
       }
 
     .hidden {
-        /* display: none; */
         top: -110px;
         transition: top 0.4s ease-out;
       }
@@ -72,6 +70,12 @@
       display:block;
       width: 350px;
       margin: 0 auto;
+      transition: none;
+    }
+
+    #hero img:hover {
+      transform: none;
+      box-shadow: none;
     }
 
 #main #onlineMenuButton {
@@ -126,6 +130,12 @@
       grid-column: col-start 2/ span 10;
       align-items: center;
       margin-bottom: 3rem;
+      box-shadow:15px 15px #333333;
+    }
+
+    #testimonials .testimonialsContainer:hover {
+      transform: none;
+      box-shadow:15px 15px #333333;
     }
 
     #testimonials .customerCard {
