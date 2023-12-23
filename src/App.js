@@ -12,7 +12,7 @@ import ConfirmedBooking from "./ConfirmedBooking";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route path="/booking" element={<BookingPage />} />
