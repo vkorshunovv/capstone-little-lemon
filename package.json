@@ -1,7 +1,7 @@
 {
+  "homepage": "https://vkorshunovv.github.io/capstone-little-lemon",
   "name": "capstone-meta",
   "version": "0.1.0",
-  "homepage": "https://vkorshunovv.github.io/capstone-little-lemon",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^6.1.4",
