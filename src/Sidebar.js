@@ -24,7 +24,7 @@ const Sidebar = () => {
       <a className="menu-item" href="#onlineMenuButton" onClick={closeSideBar}>
         Menu
       </a>
-      <a className="menu-item" href="/booking" onClick={closeSideBar}>
+      <a className="menu-item" href="/capstone-little-lemon" onClick={closeSideBar}>
         Reservations
       </a>
       <a className="menu-item" href="#testimonials" onClick={closeSideBar}>
