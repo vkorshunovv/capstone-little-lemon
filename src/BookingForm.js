@@ -42,7 +42,7 @@ export default function BookingForm({
   return (
     <>
       <div className="homeIcon">
-        <a href="/">
+        <a href="/capstone-little-lemon">
           <img src={homeLogo} alt="Homepage Icon" />
         </a>
       </div>

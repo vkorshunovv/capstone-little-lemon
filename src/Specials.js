@@ -25,7 +25,7 @@ export default function Specials() {
                 our Chicago style feta cheese, garnished with crunchy garlic and
                 rosemary croutons
               </p>
-              <a href="#">
+              <a href="/">
                 Order a delivery
                 <img src={scooterDelivery} alt="Delivery Scooter Icon" />
               </a>
@@ -44,7 +44,7 @@ export default function Specials() {
                 and seasoned tomatoes, a flavorful blend complemented with salt
                 and olive oil.
               </p>
-              <a href="#">
+              <a href="/">
                 Order a delivery
                 <img src={scooterDelivery} alt="Delivery Scooter Icon" />
               </a>
@@ -63,7 +63,7 @@ export default function Specials() {
                 ingredient has been meticulously sourced, ensuring an
                 unparalleled authenticity in taste.
               </p>
-              <a href="#">
+              <a href="/">
                 Order a delivery
                 <img src={scooterDelivery} alt="Delivery Scooter Icon" />
               </a>

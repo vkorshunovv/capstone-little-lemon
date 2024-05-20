@@ -29,7 +29,6 @@ export default function Chicago() {
       <div className="brothersPictures">
         <img src={brothers2} alt="Mario and Adrian" />
         <img src={brothers1} alt="Mario and Adrian" />
-        <img />
       </div>
     </div>
   );

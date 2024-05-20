@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { slide as Menu } from "react-burger-menu";
 import "./Sidebar.css";
 
-export default () => {
+const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleIsOpen = () => {
@@ -36,3 +36,5 @@ export default () => {
     </Menu>
   );
 };
+
+export default {Sidebar}

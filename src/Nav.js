@@ -6,7 +6,7 @@ export default function Nav() {
       <nav id="nav">
         <ul id="navbar">
           <li>
-            <a href="/">Home</a>
+            <a href="/capstone-little-lemon">Home</a>
           </li>
           <li>
             <a href="#history">About</a>
@@ -15,7 +15,7 @@ export default function Nav() {
             <a href="#onlineMenuButton">Menu</a>
           </li>
           <li>
-            <a href="/booking">Reservations</a>
+            <a href="/capstone-little-lemon">Reservations</a>
           </li>
           <li>
             <a href="#testimonials">Testimonials</a>

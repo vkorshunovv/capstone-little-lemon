@@ -81,6 +81,7 @@ export default function Footer() {
           <a
             href="https://github.com/vkorshunovv/capstone-little-lemon"
             target="_blank"
+            rel="noreferrer"
           >
             Viktor Korshunov.
           </a>{" "}

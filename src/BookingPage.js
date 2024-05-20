@@ -34,9 +34,8 @@ const availableTimesByDate = {
   "2024-06-27": ["17:00", "18:00", "19:00"],
   "2024-06-28": ["20:00", "21:00", "22:00"],
   "2024-06-29": ["17:00", "18:00", "19:00"],
-  "2024-06-30": ["20:00", "21:00", "22:00"]
-}
-
+  "2024-06-30": ["20:00", "21:00", "22:00"],
+};
 
 export default function BookingPage({
   date,
@@ -55,13 +54,9 @@ export default function BookingPage({
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
 
   function initializeTimes() {
-    fetchAPI()
-      .then((times) => {
-        const availableTimes = [...times];
-      })
-      .catch((error) => {
-        console.error("Error fetching available times:", error);
-      });
+    fetchAPI().catch((error) => {
+      console.error("Error fetching available times:", error);
+    });
     return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
   }
 
