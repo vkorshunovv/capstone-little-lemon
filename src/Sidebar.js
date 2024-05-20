@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { slide as Menu } from "react-burger-menu";
 import "./Sidebar.css";
 
-export default (props) => {
+export default () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleIsOpen = () => {

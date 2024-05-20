@@ -1,16 +1,18 @@
-import { useState } from "react";
 import homeLogo from "./icons_assets/home-5-512.png";
 
 export default function BookingForm({
   availableTimes,
   handleDateChange,
   submitForm,
+  date,
+  guests,
+  occasion,
+  time,
+  setDate,
+  setGuests,
+  setOccasion,
+  setTime,
 }) {
-  const [date, setDate] = useState("");
-  const [guests, setGuests] = useState("");
-  const [occasion, setOccasion] = useState("");
-  const [time, setTime] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
