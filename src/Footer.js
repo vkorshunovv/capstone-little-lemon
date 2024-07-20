@@ -9,7 +9,7 @@ export default function Footer() {
       <nav>
         <ul>
           <li>
-            <a href="/">HOME</a>
+            <a href="/capstone-little-lemon">HOME</a>
           </li>
           <li>
             <a href="#history">ABOUT</a>

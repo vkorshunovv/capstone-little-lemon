@@ -1,41 +1,14 @@
 import BookingForm from "./BookingForm";
-import React, { useReducer, useState } from "react";
-import { fetchAPI, submitAPI } from "./mockAPI";
+import React, { useReducer, useState, useEffect } from "react";
+import {
+  submitAPI,
+  availableTimesByDate,
+  getDateList,
+} from "./mockAPI";
 import { useNavigate } from "react-router-dom";
 import ConfirmedBooking from "./ConfirmedBooking.js";
+import {} from "./mockAPI";
 
-const availableTimesByDate = {
-  "2024-06-01": ["17:00", "18:00", "19:00"],
-  "2024-06-02": ["20:00", "21:00", "22:00"],
-  "2024-06-03": ["17:00", "18:00", "19:00"],
-  "2024-06-04": ["20:00", "21:00", "22:00"],
-  "2024-06-05": ["17:00", "18:00", "19:00"],
-  "2024-06-06": ["20:00", "21:00", "22:00"],
-  "2024-06-07": ["17:00", "18:00", "19:00"],
-  "2024-06-08": ["20:00", "21:00", "22:00"],
-  "2024-06-09": ["17:00", "18:00", "19:00"],
-  "2024-06-10": ["20:00", "21:00", "22:00"],
-  "2024-06-11": ["17:00", "18:00", "19:00"],
-  "2024-06-12": ["20:00", "21:00", "22:00"],
-  "2024-06-13": ["17:00", "18:00", "19:00"],
-  "2024-06-14": ["20:00", "21:00", "22:00"],
-  "2024-06-15": ["17:00", "18:00", "19:00"],
-  "2024-06-16": ["20:00", "21:00", "22:00"],
-  "2024-06-17": ["17:00", "18:00", "19:00"],
-  "2024-06-18": ["20:00", "21:00", "22:00"],
-  "2024-06-19": ["17:00", "18:00", "19:00"],
-  "2024-06-20": ["20:00", "21:00", "22:00"],
-  "2024-06-21": ["17:00", "18:00", "19:00"],
-  "2024-06-22": ["20:00", "21:00", "22:00"],
-  "2024-06-23": ["17:00", "18:00", "19:00"],
-  "2024-06-24": ["20:00", "21:00", "22:00"],
-  "2024-06-25": ["17:00", "18:00", "19:00"],
-  "2024-06-26": ["20:00", "21:00", "22:00"],
-  "2024-06-27": ["17:00", "18:00", "19:00"],
-  "2024-06-28": ["20:00", "21:00", "22:00"],
-  "2024-06-29": ["17:00", "18:00", "19:00"],
-  "2024-06-30": ["20:00", "21:00", "22:00"],
-};
 
 export default function BookingPage({
   date,
@@ -51,26 +24,33 @@ export default function BookingPage({
 
   const [submittedData, setSubmittedData] = useState(null);
 
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+  useEffect(() => {
+    getDateList();
+    const initialTimes = initializeTimes();
+    dispatch({ type: "initialize_times", initialTimes });
+  }, []);
+
+  const [availableTimes, dispatch] = useReducer(updateTimes, []);
 
   function initializeTimes() {
-    fetchAPI().catch((error) => {
-      console.error("Error fetching available times:", error);
-    });
-    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+    const currentDate = new Date().toISOString().split("T")[0];
+    return availableTimesByDate[currentDate] || [];
   }
 
   function updateTimes(state, action) {
-    if (action.type === "update_times") {
-      var selectedDate = action.selectedDate;
-
-      return availableTimesByDate[selectedDate];
-    } else {
-      return state;
+    switch (action.type) {
+      case "initialize_times":
+        return action.initialTimes;
+      case "update_times":
+        const selectedDate = action.selectedDate;
+        return availableTimesByDate[selectedDate] || [];
+      default:
+        return state;
     }
   }
 
   const handleDateChange = (selectedDate) => {
+    setDate(selectedDate);
     dispatch({ type: "update_times", selectedDate });
   };
 
@@ -94,7 +74,7 @@ export default function BookingPage({
         <div id="booking">
           <BookingForm
             date={date}
-            setDate={setDate}
+            setDate={handleDateChange}
             guests={guests}
             setGuests={setGuests}
             occasion={occasion}

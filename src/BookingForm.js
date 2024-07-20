@@ -22,11 +22,14 @@ export default function BookingForm({
       time,
     };
     submitForm(formData);
-    console.log("Form submitted :", time, date, guests, occasion);
   };
 
   const timeSelections = availableTimes?.map((time, index) => {
-    return (
+    return index === 0 ? (
+      <option value={time} key={index} disabled>
+        {time}
+      </option>
+    ) : (
       <option value={time} key={index}>
         {time}
       </option>
@@ -103,7 +106,7 @@ export default function BookingForm({
           </select>
 
           <input
-            disabled={!date || !guests || !occasion}
+            disabled={!date || !guests || !occasion || !time}
             type="submit"
             value="Reserve a Table"
             id="button"

@@ -15,7 +15,7 @@ const Sidebar = () => {
 
   return (
     <Menu isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen} right>
-      <a className="menu-item" href="/" onClick={closeSideBar}>
+      <a className="menu-item" href="/capstone-little-lemon" onClick={closeSideBar}>
         Home
       </a>
       <a className="menu-item" href="#history" onClick={closeSideBar}>

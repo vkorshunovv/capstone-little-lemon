@@ -1,65 +1,37 @@
-const availableTimesByDate = {
-  "2024-06-01": ["17:00", "18:00", "19:00"],
-  "2024-06-02": ["20:00", "21:00", "22:00"],
-  "2024-06-03": ["17:00", "18:00", "19:00"],
-  "2024-06-04": ["20:00", "21:00", "22:00"],
-  "2024-06-05": ["17:00", "18:00", "19:00"],
-  "2024-06-06": ["20:00", "21:00", "22:00"],
-  "2024-06-07": ["17:00", "18:00", "19:00"],
-  "2024-06-08": ["20:00", "21:00", "22:00"],
-  "2024-06-09": ["17:00", "18:00", "19:00"],
-  "2024-06-10": ["20:00", "21:00", "22:00"],
-  "2024-06-11": ["17:00", "18:00", "19:00"],
-  "2024-06-12": ["20:00", "21:00", "22:00"],
-  "2024-06-13": ["17:00", "18:00", "19:00"],
-  "2024-06-14": ["20:00", "21:00", "22:00"],
-  "2024-06-15": ["17:00", "18:00", "19:00"],
-  "2024-06-16": ["20:00", "21:00", "22:00"],
-  "2024-06-17": ["17:00", "18:00", "19:00"],
-  "2024-06-18": ["20:00", "21:00", "22:00"],
-  "2024-06-19": ["17:00", "18:00", "19:00"],
-  "2024-06-20": ["20:00", "21:00", "22:00"],
-  "2024-06-21": ["17:00", "18:00", "19:00"],
-  "2024-06-22": ["20:00", "21:00", "22:00"],
-  "2024-06-23": ["17:00", "18:00", "19:00"],
-  "2024-06-24": ["20:00", "21:00", "22:00"],
-  "2024-06-25": ["17:00", "18:00", "19:00"],
-  "2024-06-26": ["20:00", "21:00", "22:00"],
-  "2024-06-27": ["17:00", "18:00", "19:00"],
-  "2024-06-28": ["20:00", "21:00", "22:00"],
-  "2024-06-29": ["17:00", "18:00", "19:00"],
-  "2024-06-30": ["20:00", "21:00", "22:00"]
-};
+export const availableTimesByDate = {};
 
+export function getDateList() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const dayInMonth = new Date(year, month, 0).getDate();
 
-const fetchAPI = (date) => {
+  function getRandomTime(day) {
+    return day % 2 === 0
+      ? ["", "17:00", "18:00", "19:00"]
+      : ["", "20:00", "21:00", "22:00"];
+  }
+
+  for (let day = 1; day <= dayInMonth + 1; day++) {
+    const date = new Date(year, month, day);
+    const dateString = date.toISOString().split("T")[0];
+    availableTimesByDate[dateString] = getRandomTime(day);
+  }
+
+  return availableTimesByDate;
+}
+
+export const submitAPI = (formData) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (availableTimesByDate[date]) {
-        resolve(availableTimesByDate[date]);
-      } else if (availableTimesByDate[date] == null) {
-        console.log("FetchApi return null");
-      } else {
-        reject(new Error("No available times for the selected date."));
-      }
-    }, 1000);
-  });
-};
-
-const submitAPI = (formData) => {
-  availableTimesByDate[formData.date] = availableTimesByDate[
-    formData.date
-  ].filter((time) => time !== formData.time);
-
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (formData) {
-        resolve(true); // Simulate successful submission
+      if (availableTimesByDate[formData.date]) {
+        availableTimesByDate[formData.date] = availableTimesByDate[
+          formData.date
+        ].filter((time) => time !== formData.time);
+        resolve(true);
       } else {
         reject(new Error("Form submission failed."));
       }
-    }, 1000); // Simulate API delay
+    }, 0); // Simulate API delay
   });
 };
-
-export { fetchAPI, submitAPI };
