@@ -1,12 +1,13 @@
 import React from "react";
 
 export default function Nav() {
+  const url_base = "/capstone-little-lemon";
   return (
     <>
       <nav id="nav">
         <ul id="navbar">
           <li>
-            <a href="/capstone-little-lemon">Home</a>
+            <a href={url_base}>Home</a>
           </li>
           <li>
             <a href="#history">About</a>
@@ -15,7 +16,7 @@ export default function Nav() {
             <a href="#onlineMenuButton">Menu</a>
           </li>
           <li>
-            <a href="/capstone-little-lemon">Reservations</a>
+            <a href={url_base + "/booking"}>Reservations</a>
           </li>
           <li>
             <a href="#testimonials">Testimonials</a>

@@ -2,6 +2,7 @@ import React from "react";
 import logoSquare from "./icons_assets/logoSquare.png";
 
 export default function Footer() {
+  const url_base = "/capstone-little-lemon";
   return (
     <footer id="footer">
       <img src={logoSquare} width="200px" alt="Little Lemon logo" />
@@ -9,7 +10,7 @@ export default function Footer() {
       <nav>
         <ul>
           <li>
-            <a href="/capstone-little-lemon">HOME</a>
+            <a href={url_base}>HOME</a>
           </li>
           <li>
             <a href="#history">ABOUT</a>
@@ -18,7 +19,7 @@ export default function Footer() {
             <a href="#onlineMenuButton">MENU</a>
           </li>
           <li>
-            <a href="/booking">RESERVATIONS</a>
+            <a href={url_base + "/booking"}>RESERVATIONS</a>
           </li>
           <li>
             <a href="#testimonials">TESTIMONIALS</a>
